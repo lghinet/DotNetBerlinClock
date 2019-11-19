@@ -49,3 +49,25 @@ RRRR
 OOOOOOOOOOO
 OOOO
 """
+
+Scenario: TestCase 16:50:06
+When the time is "16:50:06"
+Then the clock should look like
+"""
+Y
+RRRO
+ROOO
+YYRYYRYYRYO
+OOOO
+"""
+
+Scenario: TestCase 11:37:01
+When the time is "11:37:01"
+Then the clock should look like
+"""
+O
+RROO
+ROOO
+YYRYYRYOOOO
+YYOO
+"""

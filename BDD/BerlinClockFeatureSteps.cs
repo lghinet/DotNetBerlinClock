@@ -8,20 +8,20 @@ namespace BerlinClock
     [Binding]
     public class TheBerlinClockSteps
     {
-        private ITimeConverter berlinClock = new TimeConverter();
-        private String theTime;
+        private readonly ITimeConverter _berlinClock = new BerlinTimeConverter();
+        private String _theTime;
 
         
         [When(@"the time is ""(.*)""")]
         public void WhenTheTimeIs(string time)
         {
-            theTime = time;
+            _theTime = time;
         }
         
         [Then(@"the clock should look like")]
         public void ThenTheClockShouldLookLike(string theExpectedBerlinClockOutput)
         {
-            Assert.AreEqual(berlinClock.convertTime(theTime), theExpectedBerlinClockOutput);
+            Assert.AreEqual(_berlinClock.convertTime(_theTime), theExpectedBerlinClockOutput);
         }
 
     }
